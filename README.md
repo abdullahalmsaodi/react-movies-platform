@@ -94,11 +94,12 @@ npm install
 Create a new file named `.env.local` in the root directory of your project and add the following environment variables:
 
 ```env
-VITE_TMDB_API_KEY=
+VITE_API_KEY=
 
+VITE_APPWRITE_ENDPOINT=
 VITE_APPWRITE_PROJECT_ID=
 VITE_APPWRITE_DATABASE_ID=
-VITE_APPWRITE_COLLECTION_ID=
+VITE_APPWRITE_TABLE_ID=
 ```
 
 Replace the placeholder values with your actual credentials:
