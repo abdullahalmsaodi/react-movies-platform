@@ -1,16 +1,12 @@
-const MovieCard = ({
-  movie: { title, poster_path, vote_average, release_date, original_language },
-}) => {
+import { getMoviePosterUrl } from "../utils/movieImages.js";
+
+const MovieCard = ({ movie }) => {
+  const { title, poster_path, vote_average, release_date, original_language } =
+    movie;
+
   return (
     <div className="movie-card">
-      <img
-        src={
-          poster_path
-            ? `https://image.tmdb.org/t/p/w500/${poster_path}`
-            : "/no-movie.png"
-        }
-        alt={title}
-      />
+      <img src={getMoviePosterUrl(poster_path)} alt={title} />
       <div className="mt-4">
         <h3>{title}</h3>
       </div>
@@ -22,12 +18,11 @@ const MovieCard = ({
           <span>•</span>
           <p className="lang">{original_language}</p>
           <span>•</span>
-          <p className="year">
-            {release_date ? release_date.split("-")[0] : "N/A"}
-          </p>
+          <p className="year">{release_date ? release_date.split("-")[0] : "N/A"}</p>
         </div>
       </div>
     </div>
   );
 };
+
 export default MovieCard;
